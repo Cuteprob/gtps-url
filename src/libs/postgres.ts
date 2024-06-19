@@ -1,7 +1,6 @@
-import { createPool } from '@vercel/postgres';
-
+import { createClient } from '@vercel/postgres';
 const connectDb = async () => {
-    const client = createPool({
+    const client = createClient({
         connectionString: import.meta.env.POSTGRES_URL
     });
     await client.connect();
